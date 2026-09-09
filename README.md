@@ -1,17 +1,123 @@
 # Sikuli IDE
 
-Este repositório  lista  alguns códigos de funcionalidades comumente utilizadas no Sikuli IDE. 
+Repositório com exemplos de códigos e funcionalidades comumente utilizadas no **Sikuli IDE** para automação de interfaces gráficas (GUI).
 
-Para quem não conhece, Sikuli é uma ferramenta visual para automatizar e testar interfaces gráficas (GUI), baseando-se em reconhecimento de imagem para realizar ações na tela do computador do usuário, como por exemplo: clicar, mover o mouse e digitar, entre outras ações, podendo assim ser utilizada para testar software independentemente da interface utilizada, sendo plataforma web ou desktop - e até mesmo mobile, se você espelhar a tela do celular no PC!
-<br><br>
-O propósito do Sikuli é poder testar qualquer aplicação que apresente uma interface com o usuário. O Sikuli é baseado na linguagem <i>Jython</i> (Java + Python). A linguagem Python é utilizada para a criação da biblioteca, uma vez que apresenta uma curva de aprendizagem curta e pode ser integrada ao ambiente.
+---
 
-Como ainda estou iniciando nesta ferramenta, até o momento posso contribuir com estes códigos:
-<br>
-- <a href="https://github.com/CarolCiola/SikuliIDE/blob/master/captura_screenshot.md"><b>captura_screenshot</b></a>: descreve como implementar captura de printscreen de toda a tela (ou da janela que possui o foco) nos passos do script, salvando a imagem no diretório desejado, com nome personalizado e numeração automática, para gravar as imagens sem que haja sobreposição.
+## 🖥️ Sobre o Sikuli
 
-- <a href="https://github.com/CarolCiola/SikuliIDE/blob/master/gera_CPF_aleatorio.md"><b>gera_CPF_aleatorio</b></a>: descreve como implementar a geração randômica de CPF válido nos passos do script, informando no log do Sikuli o CPF que foi gerado.
+O **Sikuli** é uma ferramenta de automação e testes de interfaces gráficas (GUI) baseada em **reconhecimento de imagens**.
 
-- <a href="https://github.com/CarolCiola/SikuliIDE/blob/master/gera_data_aleatoria.md"><b>gera_data_aleatoria</b></a>: descreve como implementar a geração randômica de data válida nos passos do script, informando no log do Sikuli a data que foi gerada.
-<br></br>
-Qualquer dúvida me contate! carol.ciola@gmail.com
+Diferentemente de ferramentas que dependem diretamente do código HTML, identificadores de elementos ou APIs específicas da aplicação, o Sikuli utiliza imagens como referência para localizar elementos visualmente na tela e executar ações sobre eles.
+
+Entre as ações que podem ser automatizadas estão:
+
+* 🖱️ Clicar em elementos
+* 🖱️ Mover o mouse
+* ⌨️ Digitar informações
+* ⌨️ Utilizar teclas e atalhos
+* 🖼️ Identificar elementos por reconhecimento de imagem
+* 📸 Capturar screenshots
+* ⏱️ Aguardar elementos aparecerem na tela
+
+---
+
+## ⚙️ Como funciona
+
+O Sikuli IDE utiliza a linguagem **Jython**, uma implementação do Python executada sobre a plataforma Java.
+
+A automação é baseada principalmente na identificação visual dos elementos.
+
+Por exemplo, em vez de localizar um botão utilizando um seletor como:
+
+```text
+id=btnLogin
+```
+
+a automação pode utilizar uma imagem do botão para encontrá-lo na tela.
+
+Isso permite trabalhar com aplicações que possuem diferentes tipos de interface, desde que os elementos possam ser identificados visualmente.
+
+---
+
+## 🧪 Aplicações
+
+Uma das principais características do Sikuli é a possibilidade de automatizar aplicações independentemente da tecnologia utilizada na interface.
+
+Ele pode ser utilizado em cenários envolvendo:
+
+* 🌐 Aplicações web
+* 🖥️ Aplicações desktop
+* 📱 Aplicações mobile, utilizando o espelhamento da tela do dispositivo no computador
+* 🧪 Testes funcionais
+* 🔄 Automação de tarefas repetitivas
+* 🖼️ Validação de elementos visuais
+
+O propósito é possibilitar a automação de aplicações que apresentem uma **interface gráfica com o usuário**.
+
+---
+
+## 📂 Conteúdos disponíveis
+
+Como este repositório também funciona como material de estudo, os exemplos são adicionados conforme novos recursos e funcionalidades do Sikuli são explorados.
+
+### 📸 Captura de screenshots
+
+**[captura_screenshot](captura_screenshot.md)**
+
+Exemplo de implementação de captura de screenshot durante a execução do script.
+
+O código demonstra como:
+
+* Capturar toda a tela;
+* Capturar a janela que possui o foco;
+* Definir o diretório onde a imagem será salva;
+* Utilizar um nome personalizado;
+* Criar numeração automática;
+* Evitar que screenshots anteriores sejam sobrescritos.
+
+---
+
+### 🆔 Geração de CPF aleatório
+
+**[gera_CPF_aleatorio](gera_CPF_aleatorio.md)**
+
+Exemplo de implementação para geração randômica de um **CPF válido** durante a execução do script.
+
+O exemplo também demonstra como registrar no log do Sikuli o CPF gerado.
+
+Esse tipo de recurso pode ser útil em testes que precisam de dados de entrada gerados dinamicamente.
+
+---
+
+### 📅 Geração de data aleatória
+
+**[gera_data_aleatoria](gera_data_aleatoria.md)**
+
+Exemplo de implementação para geração randômica de uma **data válida** durante a execução do script.
+
+O código também apresenta como informar no log do Sikuli a data que foi gerada.
+
+Esse tipo de funcionalidade pode ser utilizado para criar dados dinâmicos durante a execução de testes.
+
+---
+
+## 🎯 Objetivo do repositório
+
+Este repositório tem como objetivo reunir exemplos práticos de funcionalidades utilizadas em automações com **Sikuli IDE**.
+
+Como o estudo da ferramenta é incremental, novos exemplos podem ser adicionados conforme novos recursos forem explorados.
+
+A ideia é manter os códigos como uma **referência rápida** para funcionalidades que podem ser reutilizadas em diferentes scripts de automação.
+
+---
+
+## 🤝 Contribuições
+
+Sugestões, melhorias e novos exemplos são bem-vindos! Caso você tenha alguma dúvida, sugestão ou queira contribuir com o projeto, fique à vontade para entrar em contato.
+
+---
+
+## 📌 Observação
+
+Este repositório foi criado inicialmente como material de estudo e referência pessoal durante o aprendizado do Sikuli IDE. Os exemplos aqui apresentados representam funcionalidades que foram exploradas e utilizadas em automações, podendo ser adaptados conforme a necessidade de cada projeto.
