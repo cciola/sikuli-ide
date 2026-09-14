@@ -80,7 +80,7 @@ O código demonstra como:
 
 ### 🆔 Geração de CPF aleatório
 
-**[gera_CPF_aleatorio](gera_CPF_aleatorio.md)**
+**[gera_cpf_aleatorio](gera_cpf_aleatorio.md)**
 
 Exemplo de implementação para geração randômica de um **CPF válido** durante a execução do script.
 
