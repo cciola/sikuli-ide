@@ -49,11 +49,11 @@ Nesse exemplo, as imagens serão armazenadas em:
 C:\Users\cciola\Desktop\Sikuli_IDE\Screenshots_Sikuli\
 ```
 
-### ⚠️ Observação
+**Observações:**
 
-O caminho deve ser alterado de acordo com o diretório existente no computador onde o script será executado.
+* O caminho deve ser alterado de acordo com o diretório existente no computador onde o script será executado.
 
-A utilização de `r` antes da string permite tratar o caminho como uma **raw string**, reduzindo problemas relacionados às barras invertidas (`\`) utilizadas nos caminhos do Windows.
+* A utilização de `r` antes da string permite tratar o caminho como uma **raw string**, reduzindo problemas relacionados às barras invertidas (`\`) utilizadas nos caminhos do Windows.
 
 ---
 
@@ -108,20 +108,10 @@ def capturaImagem_func():
 ### Etapas executadas
 
 #### 1. Aguarda um segundo
-
-```python
-wait(1)
-```
-
-A execução aguarda um segundo antes de realizar a captura.
+A execução `wait(1)` aguarda um segundo antes de realizar a captura.
 
 #### 2. Incrementa o contador
-
-```python
-numPrint_func()
-```
-
-A função de incremento é chamada para gerar o próximo número do screenshot.
+A função de incremento `numPrint_func()` é chamada para gerar o próximo número do screenshot.
 
 #### 3. Captura a tela
 
@@ -129,21 +119,10 @@ A função de incremento é chamada para gerar o próximo número do screenshot.
 capture(Screen())
 ```
 
-O `capture()` realiza a captura da tela.
-
-Nesse caso, `Screen()` indica que a captura será realizada na tela.
+O `capture()` realiza a captura da tela. Nesse caso, `Screen()` indica que a captura será realizada na tela.
 
 #### 4. Move o arquivo para o diretório definido
-
-```python
-shutil.move(...)
-```
-
-O arquivo gerado pela captura é movido para a pasta definida na variável:
-
-```python
-screenshotsPasta
-```
+`shutil.move(...)` faz com que arquivo gerado pela captura seja movido para a pasta definida na variável `screenshotsPasta`.
 
 #### 5. Define o nome do arquivo
 
@@ -211,17 +190,7 @@ exit()
 
 Após a execução, será exibido um popup informando que o script foi finalizado.
 
-O arquivo será armazenado no diretório configurado:
-
-```text
-Screenshots_Sikuli\
-```
-
-Com um nome semelhante a:
-
-```text
-NomeDoArquivo_1.png
-```
+O arquivo será armazenado no diretório configurado `Screenshots_Sikuli\` com um nome semelhante a `NomeDoArquivo_1.png`.
 
 Ao executar novamente o código dentro da mesma execução do script, o contador poderá gerar:
 
@@ -235,13 +204,7 @@ NomeDoArquivo_3.png
 
 ## 🖥️ Capturando somente a janela em foco
 
-Por padrão, o exemplo utiliza:
-
-```python
-capture(Screen())
-```
-
-para capturar a tela.
+Por padrão, o exemplo utiliza o comando `capture(Screen())` para capturar a tela.
 
 Caso seja necessário capturar **somente a janela que está em foco**, pode-se obter a janela utilizando:
 
@@ -252,21 +215,9 @@ firstWindow.highlight(2)
 
 ### Identificando a janela em foco
 
-O comando:
+O comando `firstWindow = App.focusedWindow()` obtém a janela que atualmente está em foco.
 
-```python
-firstWindow = App.focusedWindow()
-```
-
-obtém a janela que atualmente está em foco.
-
-Já:
-
-```python
-firstWindow.highlight(2)
-```
-
-destaca a janela identificada durante dois segundos.
+Já o comando `firstWindow.highlight(2)` destaca a janela identificada durante dois segundos.
 
 Isso pode ser útil para visualizar qual janela o Sikuli está considerando como foco antes da captura.
 
@@ -283,17 +234,7 @@ shutil.move(
 )
 ```
 
-Dessa forma, em vez de capturar toda a tela:
-
-```python
-capture(Screen())
-```
-
-a captura será realizada considerando a janela identificada:
-
-```python
-capture(firstWindow)
-```
+Dessa forma, em vez de capturar toda a tela utilizando `capture(Screen())`, o comando `capture(firstWindow)` realiza a captura considerando a janela identificada.
 
 O comportamento é semelhante à ideia de utilizar **Alt + Print Screen** para capturar a janela ativa.
 
@@ -303,13 +244,7 @@ O comportamento é semelhante à ideia de utilizar **Alt + Print Screen** para c
 
 Durante a execução de um teste, pode ser útil registrar no log qual foi o último screenshot capturado.
 
-Para isso, pode-se utilizar:
-
-```python
-print('Arquivo gerado: %d' % numPrint)
-```
-
-Esse comando pode ser colocado logo após a captura.
+Para isso, pode-se utilizar `print('Arquivo gerado: %d' % numPrint)`. Esse comando pode ser colocado logo após a captura.
 
 Por exemplo:
 

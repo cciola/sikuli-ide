@@ -12,13 +12,13 @@ Diferentemente de ferramentas que dependem diretamente do código HTML, identifi
 
 Entre as ações que podem ser automatizadas estão:
 
-* 🖱️ Clicar em elementos
-* 🖱️ Mover o mouse
-* ⌨️ Digitar informações
-* ⌨️ Utilizar teclas e atalhos
-* 🖼️ Identificar elementos por reconhecimento de imagem
-* 📸 Capturar screenshots
-* ⏱️ Aguardar elementos aparecerem na tela
+* Clicar em elementos
+* Mover o mouse
+* Digitar informações
+* Utilizar teclas e atalhos
+* Identificar elementos por reconhecimento de imagem
+* Capturar screenshots
+* Aguardar elementos aparecerem na tela
 
 ---
 
@@ -46,12 +46,12 @@ Uma das principais características do Sikuli é a possibilidade de automatizar 
 
 Ele pode ser utilizado em cenários envolvendo:
 
-* 🌐 Aplicações web
-* 🖥️ Aplicações desktop
-* 📱 Aplicações mobile, utilizando o espelhamento da tela do dispositivo no computador
-* 🧪 Testes funcionais
-* 🔄 Automação de tarefas repetitivas
-* 🖼️ Validação de elementos visuais
+* Aplicações web
+* Aplicações desktop
+* Aplicações mobile, utilizando o espelhamento da tela do dispositivo no computador
+* Testes funcionais
+* Automação de tarefas repetitivas
+* Validação de elementos visuais
 
 O propósito é possibilitar a automação de aplicações que apresentem uma **interface gráfica com o usuário**.
 

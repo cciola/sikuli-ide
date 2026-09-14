@@ -36,19 +36,11 @@ import random
 
 ### `random`
 
-A biblioteca `random` é utilizada para gerar valores aleatórios para:
-
-* Ano;
-* Mês;
-* Dia.
+A biblioteca `random` é utilizada para gerar valores aleatórios para **ano**, **mês** e **dia**.
 
 ### `datetime`
 
-A biblioteca `datetime` é utilizada para criar e manipular a data:
-
-```python
-datetime.date(year, month, day)
-```
+A biblioteca `datetime` é utilizada para criar e manipular a data, exemplo: `datetime.date(year, month, day)`.
 
 ---
 
@@ -72,13 +64,7 @@ Nesse exemplo:
 
 O `random.randint()` retorna um número inteiro aleatório dentro do intervalo informado, incluindo os valores inicial e final.
 
-Por exemplo:
-
-```python
-random.randint(1950, 2016)
-```
-
-pode retornar:
+Por exemplo, `random.randint(1950, 2016)` pode retornar:
 
 ```text
 1950
@@ -92,35 +78,15 @@ pode retornar:
 
 ## 📅 Por que utilizar dias de 1 a 28?
 
-O dia foi limitado ao intervalo:
+O dia foi limitado ao intervalo: `day = random.randint(1, 28)`. Essa decisão evita a geração de datas inválidas.
 
-```python
-day = random.randint(1, 28)
-```
+Por exemplo, fevereiro pode possuir apenas 28 dias em um ano comum. Se fossem utilizados dias até `31`, seria possível tentar criar uma data como `31/02/2011` que não existe.
 
-Essa decisão evita a geração de datas inválidas.
-
-Por exemplo, fevereiro pode possuir apenas 28 dias em um ano comum. Se fossem utilizados dias até `31`, seria possível tentar criar uma data como:
-
-```text
-31/02/2011
-```
-
-que não existe.
-
-Ao limitar o intervalo até `28`, qualquer combinação de:
-
-* ano;
-* mês;
-* dia;
-
-será uma data válida.
+Ao limitar o intervalo até `28`, qualquer combinação de ano, mês e dia será uma data válida.
 
 ### ⚠️ Limitação dessa abordagem
 
-Embora seja uma solução simples para evitar datas inválidas, existe uma consequência:
-
-**os dias 29, 30 e 31 nunca serão gerados.**
+Embora seja uma solução simples para evitar datas inválidas, existe uma consequência: **os dias 29, 30 e 31 nunca serão gerados.**
 
 Por exemplo:
 
@@ -152,31 +118,13 @@ month = 7
 day   = 18
 ```
 
-o resultado será equivalente a:
-
-```text
-1985-07-18
-```
-
-Nesse momento, `data` é um objeto do tipo `date`.
+o resultado será equivalente a `1985-07-18`. Nesse momento, `data` é um objeto do tipo `date`.
 
 ---
 
 ## 🔄 Convertendo para `dd/mm/aaaa`
 
-O formato retornado pelo `datetime.date` é:
-
-```text
-aaaa-mm-dd
-```
-
-Para utilizar o formato mais comum em aplicações brasileiras:
-
-```text
-dd/mm/aaaa
-```
-
-é utilizado o método `strftime()`:
+O formato retornado pelo `datetime.date` é `aaaa-mm-dd`. Para utilizar o formato mais comum `dd/mm/aaaa`, é utilizado o método `strftime()`:
 
 ```python
 dtNascto = data.strftime('%d/%m/%Y')
@@ -190,29 +138,7 @@ Os códigos utilizados no formato são:
 | `%m`   | Mês                    |
 | `%Y`   | Ano com quatro dígitos |
 
-Assim:
-
-```python
-data.strftime('%d/%m/%Y')
-```
-
-pode transformar:
-
-```text
-1985-07-18
-```
-
-em:
-
-```text
-18/07/1985
-```
-
-O resultado é armazenado na variável:
-
-```python
-dtNascto
-```
+Assim, `data.strftime('%d/%m/%Y')` pode transformar `1985-07-18` em `18/07/1985`. O resultado é armazenado na variável `dtNascto`.
 
 ---
 
@@ -264,53 +190,23 @@ Script de teste finalizado com sucesso!
 Data gerada: 18/07/1985
 ```
 
-O log do Sikuli também apresentará:
+O log do Sikuli também apresentará: `Data de nascimento gerada: 18/07/1985`.
 
-```text
-Data de nascimento gerada: 18/07/1985
-```
-
-A data será escolhida aleatoriamente dentro dos intervalos definidos.
-
-Por exemplo, uma execução pode gerar:
-
-```text
-12/03/1978
-```
-
-e outra:
-
-```text
-27/11/2004
-```
+A data será escolhida aleatoriamente dentro dos intervalos definidos. Por exemplo, uma execução pode gerar `12/03/1978` e outra `27/11/2004`.
 
 ---
 
 ## 📝 Registro no log
 
-É recomendável registrar a data logo depois que ela for gerada:
+É recomendável registrar a data logo depois que ela for gerada: `print('Data de nascimento gerada: %s' % dtNascto)`. Isso permite identificar qual data foi utilizada caso ocorra uma falha posteriormente.
 
-```python
-print('Data de nascimento gerada: %s' % dtNascto)
-```
-
-Isso permite identificar qual data foi utilizada caso ocorra uma falha posteriormente.
-
-Por exemplo:
-
-```text
-Data de nascimento gerada: 12/03/1978
-```
-
-Se o script apresentar um erro antes de chegar ao `popup()`, o log ainda poderá indicar a data utilizada naquela execução.
+Por exemplo, em `Data de nascimento gerada: 12/03/1978`, se o script apresentar um erro antes de chegar ao `popup()`, o log ainda poderá indicar a data utilizada naquela execução.
 
 ---
 
 ## 🧪 Utilizando a data durante um teste
 
-Depois de armazenada em `dtNascto`, a data pode ser utilizada em outras etapas da automação.
-
-Por exemplo:
+Depois de armazenada em `dtNascto`, a data pode ser utilizada em outras etapas da automação. Por exemplo:
 
 ```python
 dtNascto = data.strftime('%d/%m/%Y')
@@ -373,29 +269,11 @@ Data no formato dd/mm/aaaa
 
 ### Intervalo de anos
 
-O intervalo utilizado neste exemplo é:
-
-```python
-random.randint(1950, 2016)
-```
-
-Esses valores são apenas uma configuração do exemplo e podem ser alterados conforme a necessidade do teste.
-
-Por exemplo:
-
-```python
-year = random.randint(1980, 2020)
-```
+O intervalo utilizado neste exemplo é `random.randint(1950, 2016)`. Esses valores são apenas uma configuração do exemplo e podem ser alterados conforme a necessidade do teste, exemplo: `year = random.randint(1980, 2020)`.
 
 ### Intervalo de dias
 
-A utilização de:
-
-```python
-day = random.randint(1, 28)
-```
-
-garante uma data válida para qualquer mês, mas restringe a geração aos primeiros 28 dias.
+A utilização de: `day = random.randint(1, 28)` garante uma data válida para qualquer mês, mas restringe a geração aos primeiros 28 dias.
 
 Se o objetivo do teste for exercitar situações envolvendo:
 

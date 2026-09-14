@@ -74,9 +74,7 @@ Inicialmente, são gerados nove números aleatórios:
 n = [random.randrange(10) for i in xrange(9)]
 ```
 
-O resultado é armazenado na lista `n`.
-
-Por exemplo:
+O resultado é armazenado na lista `n`. Por exemplo:
 
 ```text
 [5, 2, 7, 3, 1, 8, 4, 6, 9]
@@ -162,17 +160,9 @@ Agora a lista possui os onze dígitos do CPF.
 
 ## ↩️ Retorno do CPF
 
-Por fim, a função transforma os números armazenados na lista em uma string:
+Por fim, a função transforma os números armazenados na lista em uma string: `return "%d%d%d%d%d%d%d%d%d%d%d" % tuple(n)`.
 
-```python
-return "%d%d%d%d%d%d%d%d%d%d%d" % tuple(n)
-```
-
-O resultado será algo semelhante a:
-
-```text
-527318469XX
-```
+O resultado será algo semelhante a `527318469XX`.
 
 Os `X` representam os dois dígitos verificadores calculados pela função.
 
@@ -180,7 +170,7 @@ Os `X` representam os dois dígitos verificadores calculados pela função.
 
 ## ▶️ Script completo
 
-O código abaixo pode ser copiado e executado no **Sikuli IDE**.
+O código abaixo pode ser copiado e executado no **Sikuli IDE**:
 
 ```python
 import random
@@ -239,49 +229,17 @@ Script de teste finalizado com sucesso!
 CPF gerado: 12345678909
 ```
 
-O CPF será diferente a cada nova execução.
-
-O mesmo CPF também será registrado no log:
-
-```text
-CPF gerado: 12345678909
-```
+O CPF será diferente a cada nova execução. O mesmo CPF também será registrado no log `CPF gerado: 12345678909`.
 
 ---
 
 ## 📝 Por que armazenar o CPF em uma variável?
 
-Uma atenção importante ao utilizar essa função é que cada chamada de:
+Uma atenção importante ao utilizar essa função é que cada chamada de `cpf_funcional_func()` gera um **novo CPF**.
 
-```python
-cpf_funcional_func()
-```
+Por exemplo, `popup('CPF: %s' % cpf_funcional_func())` gera um CPF. Se logo depois for executado `print('CPF: %s' % cpf_funcional_func())`, um **segundo CPF diferente** será gerado.
 
-gera um **novo CPF**.
-
-Por exemplo:
-
-```python
-popup('CPF: %s' % cpf_funcional_func())
-```
-
-gera um CPF.
-
-Se logo depois for executado:
-
-```python
-print('CPF: %s' % cpf_funcional_func())
-```
-
-um **segundo CPF diferente** será gerado.
-
-Por isso, quando o objetivo é utilizar o mesmo CPF em diferentes etapas do teste, é melhor armazenar o resultado:
-
-```python
-numCPF = cpf_funcional_func()
-```
-
-E utilizar a variável posteriormente:
+Por isso, quando o objetivo é utilizar o mesmo CPF em diferentes etapas do teste, é melhor armazenar o resultado com `numCPF = cpf_funcional_func()` e utilizar a variável posteriormente:
 
 ```python
 print('CPF gerado: %s' % numCPF)
@@ -350,11 +308,7 @@ Assim, é possível identificar o dado utilizado naquela execução específica 
 
 ---
 
-## ⚠️ Observações
-
-### CPF válido não significa CPF real
-
-A função gera um número que atende à **regra matemática de validação dos dígitos do CPF**.
+**Observação: CPF válido não significa CPF real**. A função gera um número que atende à **regra matemática de validação dos dígitos do CPF**.
 
 Isso não significa que o número:
 
