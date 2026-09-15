@@ -61,7 +61,7 @@ O propósito é possibilitar a automação de aplicações que apresentem uma **
 
 Como este repositório também funciona como material de estudo, os exemplos são adicionados conforme novos recursos e funcionalidades do Sikuli são explorados.
 
-### 📸 Captura de screenshots
+### Captura de screenshots
 
 **[captura_screenshot](captura_screenshot.md)**
 
@@ -78,7 +78,7 @@ O código demonstra como:
 
 ---
 
-### 🆔 Geração de CPF aleatório
+### Geração de CPF aleatório
 
 **[gera_cpf_aleatorio](gera_cpf_aleatorio.md)**
 
@@ -90,7 +90,7 @@ Esse tipo de recurso pode ser útil em testes que precisam de dados de entrada g
 
 ---
 
-### 📅 Geração de data aleatória
+### Geração de data aleatória
 
 **[gera_data_aleatoria](gera_data_aleatoria.md)**
 
