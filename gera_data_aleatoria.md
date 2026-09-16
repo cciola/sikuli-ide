@@ -1,14 +1,8 @@
-# 📅 Gerador de Data Aleatória — Sikuli IDE
+# Gerador de Data Aleatória
 
-Exemplo de implementação de um **gerador de datas aleatórias utilizando Sikuli IDE e Jython**.
-
-A implementação utiliza as bibliotecas `datetime` e `random` para gerar uma data dentro de um intervalo definido e posteriormente convertê-la para o formato `dd/mm/aaaa`.
+A função apresentada neste exemplo utiliza as bibliotecas `datetime` e `random` para gerar uma data dentro de um intervalo definido e posteriormente convertê-la para o formato `dd/mm/aaaa`.
 
 Esse recurso pode ser utilizado em testes automatizados que necessitam de **datas de teste dinâmicas**, evitando a utilização repetitiva de uma data fixa.
-
----
-
-## 🎯 Objetivo
 
 A implementação permite:
 
@@ -25,22 +19,13 @@ A cada nova execução, uma nova data pode ser gerada dentro dos intervalos defi
 
 ---
 
-## 📦 Bibliotecas utilizadas
+## Como funciona a geração de data aleatória
 
-As bibliotecas devem ser declaradas no início do script:
+As bibliotecas `datetime` e `random` devem ser declaradas no início do script:
 
-```python
-import datetime
-import random
-```
+* A biblioteca `random` é utilizada para gerar valores aleatórios para **ano**, **mês** e **dia**.
 
-### `random`
-
-A biblioteca `random` é utilizada para gerar valores aleatórios para **ano**, **mês** e **dia**.
-
-### `datetime`
-
-A biblioteca `datetime` é utilizada para criar e manipular a data, exemplo: `datetime.date(year, month, day)`.
+* A biblioteca `datetime` é utilizada para criar e manipular a data, exemplo: `datetime.date(year, month, day)`.
 
 ---
 
@@ -76,7 +61,7 @@ Por exemplo, `random.randint(1950, 2016)` pode retornar:
 
 ---
 
-## 📅 Por que utilizar dias de 1 a 28?
+## Por que utilizar dias de 1 a 28?
 
 O dia foi limitado ao intervalo: `day = random.randint(1, 28)`. Essa decisão evita a geração de datas inválidas.
 
@@ -84,7 +69,7 @@ Por exemplo, fevereiro pode possuir apenas 28 dias em um ano comum. Se fossem ut
 
 Ao limitar o intervalo até `28`, qualquer combinação de ano, mês e dia será uma data válida.
 
-### ⚠️ Limitação dessa abordagem
+### Limitação dessa abordagem
 
 Embora seja uma solução simples para evitar datas inválidas, existe uma consequência: **os dias 29, 30 e 31 nunca serão gerados.**
 
@@ -102,7 +87,7 @@ Portanto, essa implementação é adequada quando o objetivo é simplesmente obt
 
 ---
 
-## 🧱 Criando a data
+## Criando a data
 
 Depois que ano, mês e dia são definidos, podemos criar um objeto `date`:
 
@@ -122,7 +107,7 @@ o resultado será equivalente a `1985-07-18`. Nesse momento, `data` é um objeto
 
 ---
 
-## 🔄 Convertendo para `dd/mm/aaaa`
+## Convertendo para `dd/mm/aaaa`
 
 O formato retornado pelo `datetime.date` é `aaaa-mm-dd`. Para utilizar o formato mais comum `dd/mm/aaaa`, é utilizado o método `strftime()`:
 
@@ -147,35 +132,7 @@ Assim, `data.strftime('%d/%m/%Y')` pode transformar `1985-07-18` em `18/07/1985`
 O código abaixo pode ser copiado e executado diretamente no **Sikuli IDE**:
 
 ```python
-import datetime
-import random
 
-
-# Gera ano, mês e dia de forma randômica
-year = random.randint(1950, 2016)
-month = random.randint(1, 12)
-day = random.randint(1, 28)
-
-# Cria a data
-data = datetime.date(year, month, day)
-
-# Converte a data para o formato dd/mm/aaaa
-dtNascto = data.strftime('%d/%m/%Y')
-
-# Registra a data no log
-print('Data de nascimento gerada: %s' % dtNascto)
-
-wait(2)
-
-# Exibe a data em um popup
-popup(
-    'Script de teste finalizado com sucesso! '
-    '\nData gerada: %s' % dtNascto,
-    'Alerta do Sikuli'
-)
-
-wait(1)
-exit()
 ```
 
 ---
@@ -304,21 +261,14 @@ Por exemplo, uma evolução interessante seria substituir o limite fixo de `28` 
 
 ---
 
-## 📋 Resumo
+## 🎯 Objetivo do repositório
 
-| Recurso            | Finalidade                           |
-| ------------------ | ------------------------------------ |
-| `random`           | Gerar valores aleatórios             |
-| `random.randint()` | Gerar números dentro de um intervalo |
-| `datetime.date()`  | Criar uma data                       |
-| `strftime()`       | Formatar a data                      |
-| `%d`               | Dia                                  |
-| `%m`               | Mês                                  |
-| `%Y`               | Ano com quatro dígitos               |
-| `print()`          | Registrar a data no log              |
-| `popup()`          | Exibir a data na tela                |
-| `dtNascto`         | Armazenar a data formatada           |
+Este exemplo faz parte da série de exemplos de **SikuliX com Python** deste repositório. Como o estudo da ferramenta é incremental, novos exemplos podem ser adicionados conforme novos recursos forem explorados. A ideia é manter os códigos como uma **referência rápida** para funcionalidades que podem ser reutilizadas em diferentes scripts de automação.
 
----
+## 🤝 Contribuições
 
-**Este exemplo foi criado como material de estudo e referência para geração de dados de teste utilizando Sikuli IDE.**
+Sugestões, melhorias e novos exemplos são bem-vindos! Caso você tenha alguma dúvida, sugestão ou queira contribuir com o projeto, fique à vontade para entrar em contato.
+
+## 📌 Observação
+
+Este repositório foi criado inicialmente como material de estudo e referência pessoal durante o aprendizado do SikuliX com Python. Os exemplos aqui apresentados representam funcionalidades que foram exploradas e utilizadas em automações, podendo ser adaptados conforme a necessidade de cada projeto.

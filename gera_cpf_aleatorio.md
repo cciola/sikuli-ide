@@ -1,16 +1,10 @@
-# 🆔 Gerador de CPF Aleatório — Sikuli IDE
+# Gerador de CPF Aleatório
 
-Exemplo de implementação de um **gerador de CPF válido e aleatório utilizando Sikuli IDE e Jython**.
-
-A função apresentada neste exemplo gera CPFs diferentes a cada execução, calculando automaticamente os dois dígitos verificadores do documento.
+A função apresentada neste exemplo gera CPFs diferentes válidos e aleatórios a cada execução, calculando automaticamente os dois dígitos verificadores do documento.
 
 Esse recurso pode ser utilizado em testes automatizados que necessitam de **dados de teste dinâmicos**, evitando a utilização repetitiva de um CPF fixo.
 
----
-
-## 🎯 Objetivo
-
-A implementação permite:
+A funcionalidade apresentada neste exemplo permite:
 
 * Gerar um CPF de forma randômica;
 * Calcular automaticamente os dois dígitos verificadores;
@@ -23,52 +17,11 @@ A cada nova chamada da função, um novo CPF é gerado.
 
 ---
 
-## 📦 Biblioteca utilizada
+## Como funciona a geração de CPF aleatório
 
-A biblioteca `random` deve ser declarada no início do script:
+A biblioteca `random` deve ser declarada no início do script. Ela será utilizada para gerar os nove primeiros dígitos do CPF de forma aleatória.
 
-```python
-import random
-```
-
-Ela será utilizada para gerar os nove primeiros dígitos do CPF de forma aleatória.
-
----
-
-## 🧮 Função para geração do CPF
-
-A função responsável pela geração do CPF é:
-
-```python
-def cpf_funcional_func():
-    n = [random.randrange(10) for i in xrange(9)]
-
-    # Calcula o primeiro dígito verificador
-    s = sum(x * y for x, y in zip(n, range(10, 1, -1)))
-    d1 = 11 - s % 11
-
-    if d1 >= 10:
-        d1 = 0
-
-    n.append(d1)
-
-    # Calcula o segundo dígito verificador
-    s = sum(x * y for x, y in zip(n, range(11, 1, -1)))
-    d2 = 11 - s % 11
-
-    if d2 >= 10:
-        d2 = 0
-
-    n.append(d2)
-
-    return "%d%d%d%d%d%d%d%d%d%d%d" % tuple(n)
-```
-
----
-
-## 🔢 Geração dos nove primeiros dígitos
-
-Inicialmente, são gerados nove números aleatórios:
+Inicialmente, são gerados nove números aleatórios na função:
 
 ```python
 n = [random.randrange(10) for i in xrange(9)]
@@ -82,11 +35,7 @@ O resultado é armazenado na lista `n`. Por exemplo:
 
 Esses são os nove primeiros dígitos do CPF.
 
----
-
-## ➕ Cálculo do primeiro dígito verificador
-
-O primeiro dígito verificador é calculado utilizando os nove primeiros números e seus respectivos pesos:
+O **primeiro dígito verificador** é calculado utilizando os nove primeiros números e seus respectivos pesos:
 
 ```python
 s = sum(x * y for x, y in zip(n, range(10, 1, -1)))
@@ -117,13 +66,9 @@ Por fim, o primeiro dígito verificador é adicionado à lista:
 n.append(d1)
 ```
 
-Nesse momento, a lista passa a possuir dez dígitos.
+Nesse momento, a lista passa a possuir **dez** dígitos.
 
----
-
-## ➕ Cálculo do segundo dígito verificador
-
-O segundo dígito é calculado utilizando os dez números já disponíveis, incluindo o primeiro dígito verificador:
+O **segundo dígito** é calculado utilizando os dez números já disponíveis, incluindo o primeiro dígito verificador:
 
 ```python
 s = sum(x * y for x, y in zip(n, range(11, 1, -1)))
@@ -156,76 +101,21 @@ n.append(d2)
 
 Agora a lista possui os onze dígitos do CPF.
 
----
-
-## ↩️ Retorno do CPF
-
 Por fim, a função transforma os números armazenados na lista em uma string: `return "%d%d%d%d%d%d%d%d%d%d%d" % tuple(n)`.
 
-O resultado será algo semelhante a `527318469XX`.
-
-Os `X` representam os dois dígitos verificadores calculados pela função.
+O resultado será algo semelhante a `527318469XX` (os `X` representam os dois dígitos verificadores calculados pela função).
 
 ---
 
-## ▶️ Script completo
+## Veja o método funcionando
 
-O código abaixo pode ser copiado e executado no **Sikuli IDE**:
-
-```python
-import random
+**[gera_cpf_aleatorio.py](./scripts/gera_cpf_aleatorio.py)**
 
 
-# Função para gerar CPF válido de forma randômica
-def cpf_funcional_func():
-    n = [random.randrange(10) for i in xrange(9)]
-
-    # Calcula o primeiro dígito verificador
-    s = sum(x * y for x, y in zip(n, range(10, 1, -1)))
-    d1 = 11 - s % 11
-
-    if d1 >= 10:
-        d1 = 0
-
-    n.append(d1)
-
-    # Calcula o segundo dígito verificador
-    s = sum(x * y for x, y in zip(n, range(11, 1, -1)))
-    d2 = 11 - s % 11
-
-    if d2 >= 10:
-        d2 = 0
-
-    n.append(d2)
-
-    return "%d%d%d%d%d%d%d%d%d%d%d" % tuple(n)
-
-
-# Gera o CPF e armazena o resultado
-numCPF = cpf_funcional_func()
-
-# Exibe o CPF no log
-print('CPF gerado: %s' % numCPF)
-
-# Exibe o CPF em um popup
-popup(
-    'Script de teste finalizado com sucesso! '
-    '\nCPF gerado: %s' % numCPF
-)
-
-wait(1)
-exit()
-```
-
----
-
-## 🖥️ Resultado esperado
-
-Ao executar o script, será exibido um popup semelhante a:
+Após a execução, será exibido um popup semelhante a:
 
 ```text
 Script de teste finalizado com sucesso!
-
 CPF gerado: 12345678909
 ```
 
@@ -233,7 +123,7 @@ O CPF será diferente a cada nova execução. O mesmo CPF também será registra
 
 ---
 
-## 📝 Por que armazenar o CPF em uma variável?
+## Por que armazenar o CPF em uma variável?
 
 Uma atenção importante ao utilizar essa função é que cada chamada de `cpf_funcional_func()` gera um **novo CPF**.
 
@@ -254,11 +144,9 @@ Dessa forma, popup e log apresentarão exatamente o mesmo CPF.
 
 ---
 
-## 🧪 Utilizando o CPF durante um teste
+## Utilizando o CPF durante um teste
 
-Depois de armazenado em uma variável, o CPF pode ser utilizado em outras etapas da automação.
-
-Por exemplo:
+Depois de armazenado em uma variável, o CPF pode ser utilizado em outras etapas da automação, exemplo:
 
 ```python
 numCPF = cpf_funcional_func()
@@ -282,11 +170,9 @@ Nesse cenário, o teste:
 
 Isso permite criar dados de teste dinamicamente durante a execução.
 
----
+### Por que registrar no log?
 
-## 📋 Registro no log
-
-É recomendável registrar o CPF logo após sua geração:
+É recomendável registrar o CPF logo após sua geração, caso o teste apresente uma falha antes de chegar ao `popup()`.
 
 ```python
 numCPF = cpf_funcional_func()
@@ -294,11 +180,7 @@ numCPF = cpf_funcional_func()
 print('CPF gerado: %s' % numCPF)
 ```
 
-Isso é especialmente útil caso o teste apresente uma falha antes de chegar ao `popup()`.
-
-Nesse cenário, o log do Sikuli ainda poderá indicar qual CPF foi utilizado.
-
-Exemplo:
+Nesse cenário, o log do Sikuli ainda poderá indicar qual CPF foi utilizado. Exemplo:
 
 ```text
 CPF gerado: 12345678909
@@ -308,7 +190,7 @@ Assim, é possível identificar o dado utilizado naquela execução específica 
 
 ---
 
-**Observação: CPF válido não significa CPF real**. A função gera um número que atende à **regra matemática de validação dos dígitos do CPF**.
+> **💡 Observação: CPF válido não significa CPF real**. A função gera um número que atende à **regra matemática de validação dos dígitos do CPF**.
 
 Isso não significa que o número:
 
@@ -325,7 +207,7 @@ Recomenda-se utilizar dados gerados dessa forma somente em ambientes destinados 
 
 ---
 
-## 🛠️ Possíveis melhorias
+## Possíveis melhorias
 
 A função pode ser evoluída para atender diferentes necessidades, como:
 
@@ -339,20 +221,14 @@ A função pode ser evoluída para atender diferentes necessidades, como:
 
 ---
 
-## 📌 Resumo
+## 🎯 Objetivo do repositório
 
-| Recurso                | Finalidade                                   |
-| ---------------------- | -------------------------------------------- |
-| `random`               | Gerar números aleatórios                     |
-| `random.randrange(10)` | Gerar dígitos entre `0` e `9`                |
-| `zip()`                | Associar números aos pesos                   |
-| `sum()`                | Calcular a soma ponderada                    |
-| `xrange()`             | Repetir a geração dos nove primeiros dígitos |
-| `append()`             | Adicionar os dígitos verificadores           |
-| `return`               | Retornar o CPF gerado                        |
-| `print()`              | Registrar o CPF no log                       |
-| `popup()`              | Exibir o CPF na tela                         |
+Este exemplo faz parte da série de exemplos de **SikuliX com Python** deste repositório. Como o estudo da ferramenta é incremental, novos exemplos podem ser adicionados conforme novos recursos forem explorados. A ideia é manter os códigos como uma **referência rápida** para funcionalidades que podem ser reutilizadas em diferentes scripts de automação.
 
----
+## 🤝 Contribuições
 
-**Este exemplo foi criado como material de estudo e referência para geração de dados de teste utilizando Sikuli IDE.**
+Sugestões, melhorias e novos exemplos são bem-vindos! Caso você tenha alguma dúvida, sugestão ou queira contribuir com o projeto, fique à vontade para entrar em contato.
+
+## 📌 Observação
+
+Este repositório foi criado inicialmente como material de estudo e referência pessoal durante o aprendizado do SikuliX com Python. Os exemplos aqui apresentados representam funcionalidades que foram exploradas e utilizadas em automações, podendo ser adaptados conforme a necessidade de cada projeto.

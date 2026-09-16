@@ -1,7 +1,8 @@
 # Sikuli IDE
 
-Repositório com exemplos de códigos e funcionalidades comumente utilizadas no **Sikuli IDE** para automação de interfaces gráficas (GUI).
+Este repositório reúne exemplos de funcionalidades comumente utilizadas no **Sikuli IDE** para automação de interfaces gráficas (GUI).
 
+Os exemplos têm como objetivo servir como material de consulta e estudo para quem está iniciando na utilização do SikuliX para automação de testes.
 ---
 
 ## 🖥️ Sobre o Sikuli
@@ -57,7 +58,7 @@ O propósito é possibilitar a automação de aplicações que apresentem uma **
 
 ---
 
-## 📂 Conteúdos disponíveis
+## 📂 Exemplos disponíveis
 
 Como este repositório também funciona como material de estudo, os exemplos são adicionados conforme novos recursos e funcionalidades do Sikuli são explorados.
 
@@ -104,20 +105,8 @@ Esse tipo de funcionalidade pode ser utilizado para criar dados dinâmicos duran
 
 ## 🎯 Objetivo do repositório
 
-Este repositório tem como objetivo reunir exemplos práticos de funcionalidades utilizadas em automações com **Sikuli IDE**.
+Este repositório foi criado inicialmente como um espaço de estudo e compartilhamento de exemplos práticos relacionados ao SikuliX com Python.
 
-Como o estudo da ferramenta é incremental, novos exemplos podem ser adicionados conforme novos recursos forem explorados.
+Os exemplos representam funcionalidades que podem ser reutilizadas ou adaptadas em projetos de automação de testes.
 
-A ideia é manter os códigos como uma **referência rápida** para funcionalidades que podem ser reutilizadas em diferentes scripts de automação.
-
----
-
-## 🤝 Contribuições
-
-Sugestões, melhorias e novos exemplos são bem-vindos! Caso você tenha alguma dúvida, sugestão ou queira contribuir com o projeto, fique à vontade para entrar em contato.
-
----
-
-## 📌 Observação
-
-Este repositório foi criado inicialmente como material de estudo e referência pessoal durante o aprendizado do Sikuli IDE. Os exemplos aqui apresentados representam funcionalidades que foram exploradas e utilizadas em automações, podendo ser adaptados conforme a necessidade de cada projeto.
+O conteúdo deste repositório pode ser atualizado conforme novos exemplos e funcionalidades forem incorporados.
