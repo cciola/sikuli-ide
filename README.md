@@ -18,6 +18,9 @@ Uma das principais características é a possibilidade de automatizar aplicaçõ
 * Geração de CPF aleatório - **[gera_cpf_aleatorio](gera_cpf_aleatorio.md)**
 * Geração de data aleatória - **[gera_data_aleatoria](gera_data_aleatoria.md)**
 
-## 🎯 Objetivo do repositório
+## 🎯 Observações
 
-Este repositório foi criado inicialmente como um espaço de estudo e compartilhamento de exemplos práticos relacionados ao SikuliX com Python. Os exemplos representam funcionalidades que podem ser reutilizadas ou adaptadas em projetos de automação de testes. O conteúdo deste repositório pode ser atualizado conforme novos exemplos e funcionalidades forem incorporados.
+Este repositório foi criado inicialmente como um espaço de estudo e compartilhamento de exemplos práticos durante o aprendizado do SikuliX com Python. Os exemplos aqui apresentados representam funcionalidades que foram exploradas e utilizadas em automações, podendo ser reutilizados e adaptados conforme a necessidade de cada projeto.
+
+## 🤝 Contribuições
+Sugestões, melhorias e novos exemplos são bem-vindos! Caso você tenha alguma dúvida, sugestão ou queira contribuir com o projeto, fique à vontade para entrar em contato.
