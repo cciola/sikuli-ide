@@ -89,17 +89,3 @@ Nesse cenário, o log do Sikuli ainda poderá indicar qual CPF foi utilizado: `C
 ## Observação
 
 **CPF válido não significa CPF real**. A função gera um número que atende à regra matemática de validação dos dígitos do CPF; o gerador deve ser entendido como uma ferramenta para dados de teste, apenas.
-
----
-
-## 🎯 Objetivo do repositório
-
-Este exemplo faz parte da série de exemplos de **SikuliX com Python** deste repositório. Como o estudo da ferramenta é incremental, novos exemplos podem ser adicionados conforme novos recursos forem explorados. A ideia é manter os códigos como uma **referência rápida** para funcionalidades que podem ser reutilizadas em diferentes scripts de automação.
-
-## 🤝 Contribuições
-
-Sugestões, melhorias e novos exemplos são bem-vindos! Caso você tenha alguma dúvida, sugestão ou queira contribuir com o projeto, fique à vontade para entrar em contato.
-
-## 📌 Observação
-
-Este repositório foi criado inicialmente como material de estudo e referência pessoal durante o aprendizado do SikuliX com Python. Os exemplos aqui apresentados representam funcionalidades que foram exploradas e utilizadas em automações, podendo ser adaptados conforme a necessidade de cada projeto.
