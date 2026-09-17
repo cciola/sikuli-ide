@@ -57,9 +57,7 @@ def numPrint_func():
     numPrint += 1
 ```
 
-Esta função declara que `numPrint` é uma variável global, acessa a variável definida fora da função, e incrementa seu valor em `1`.
-
-Assim, teremos a cada execução da função:
+Esta função declara que `numPrint` é uma variável global, acessa a variável definida fora da função, e incrementa seu valor em `1`. Assim, teremos a cada execução da função:
 
 ```text
 0 → 1 → 2 → 3 → 4 → ...
@@ -215,19 +213,6 @@ NomeDoArquivo_3.png
 ```
 
 Isso permite acompanhar visualmente diferentes etapas da execução do teste.
-
----
-
-## Possíveis melhorias
-
-A implementação pode ser evoluída para:
-
-* Criar automaticamente a pasta de screenshots caso ela não exista;
-* Utilizar data e hora no nome dos arquivos;
-* Associar o screenshot ao nome da etapa do teste;
-* Capturar screenshots automaticamente em caso de falha;
-* Criar uma função reutilizável para diferentes tipos de evidência;
-* Armazenar screenshots em subpastas por execução ou cenário de teste.
 
 ---
 

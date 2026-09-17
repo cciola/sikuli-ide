@@ -201,24 +201,6 @@ Isso não significa que o número:
 
 Portanto, o gerador deve ser entendido como uma ferramenta para **dados de teste**.
 
-### Uso em ambientes de teste
-
-Recomenda-se utilizar dados gerados dessa forma somente em ambientes destinados a testes, desenvolvimento ou homologação, de acordo com as regras do projeto.
-
----
-
-## Possíveis melhorias
-
-A função pode ser evoluída para atender diferentes necessidades, como:
-
-* Gerar CPF com ou sem pontuação;
-* Gerar CPF e CNPJ;
-* Permitir reutilização do CPF durante todo o cenário;
-* Criar uma biblioteca de dados de teste;
-* Gerar outros dados aleatórios, como nome, telefone e endereço;
-* Registrar os dados utilizados em arquivos de evidência;
-* Integrar a geração de dados com outros scripts de automação.
-
 ---
 
 ## 🎯 Objetivo do repositório

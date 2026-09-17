@@ -23,9 +23,9 @@ A cada nova execução, uma nova data pode ser gerada dentro dos intervalos defi
 
 As bibliotecas `datetime` e `random` devem ser declaradas no início do script:
 
-* A biblioteca `random` é utilizada para gerar valores aleatórios para **ano**, **mês** e **dia**.
+- A biblioteca `random` é utilizada para gerar valores aleatórios para **ano**, **mês** e **dia**.
 
-* A biblioteca `datetime` é utilizada para criar e manipular a data, exemplo: `datetime.date(year, month, day)`.
+- A biblioteca `datetime` é utilizada para criar e manipular a data, exemplo: `datetime.date(year, month, day)`.
 
 ---
 
@@ -105,10 +105,6 @@ day   = 18
 
 o resultado será equivalente a `1985-07-18`. Nesse momento, `data` é um objeto do tipo `date`.
 
----
-
-## Convertendo para `dd/mm/aaaa`
-
 O formato retornado pelo `datetime.date` é `aaaa-mm-dd`. Para utilizar o formato mais comum `dd/mm/aaaa`, é utilizado o método `strftime()`:
 
 ```python
@@ -127,23 +123,15 @@ Assim, `data.strftime('%d/%m/%Y')` pode transformar `1985-07-18` em `18/07/1985`
 
 ---
 
-## ▶️ Script completo
+## Veja o método funcionando
 
-O código abaixo pode ser copiado e executado diretamente no **Sikuli IDE**:
+**[gera_data_aleatoria.py](./scripts/gera_data_aleatoria.py)**
 
-```python
-
-```
-
----
-
-## 🖥️ Resultado esperado
 
 Ao executar o script, será exibido um popup semelhante a:
 
 ```text
 Script de teste finalizado com sucesso!
-
 Data gerada: 18/07/1985
 ```
 
@@ -151,9 +139,7 @@ O log do Sikuli também apresentará: `Data de nascimento gerada: 18/07/1985`.
 
 A data será escolhida aleatoriamente dentro dos intervalos definidos. Por exemplo, uma execução pode gerar `12/03/1978` e outra `27/11/2004`.
 
----
-
-## 📝 Registro no log
+### Por que registrar no log?
 
 É recomendável registrar a data logo depois que ela for gerada: `print('Data de nascimento gerada: %s' % dtNascto)`. Isso permite identificar qual data foi utilizada caso ocorra uma falha posteriormente.
 
@@ -161,7 +147,7 @@ Por exemplo, em `Data de nascimento gerada: 12/03/1978`, se o script apresentar 
 
 ---
 
-## 🧪 Utilizando a data durante um teste
+## Exemplo de uso em testes
 
 Depois de armazenada em `dtNascto`, a data pode ser utilizada em outras etapas da automação. Por exemplo:
 
@@ -187,50 +173,11 @@ Nesse cenário, o teste:
 
 ---
 
-## 📌 Fluxo da implementação
+## Observações
 
-O funcionamento pode ser resumido da seguinte maneira:
+* **Intervalo de anos:** o intervalo utilizado neste exemplo é `random.randint(1950, 2016)`. Esses valores são apenas uma configuração do exemplo e podem ser alterados conforme a necessidade do teste, exemplo: `year = random.randint(1980, 2020)`.
 
-```text
-Bibliotecas
-    │
-    ├── datetime
-    └── random
-          │
-          ▼
-Geração aleatória
-    │
-    ├── Ano: 1950–2016
-    ├── Mês: 1–12
-    └── Dia: 1–28
-          │
-          ▼
-datetime.date()
-          │
-          ▼
-Data no formato aaaa-mm-dd
-          │
-          ▼
-strftime('%d/%m/%Y')
-          │
-          ▼
-Data no formato dd/mm/aaaa
-          │
-          ├── Log do Sikuli
-          └── Popup / utilização no teste
-```
-
----
-
-## ⚠️ Observações
-
-### Intervalo de anos
-
-O intervalo utilizado neste exemplo é `random.randint(1950, 2016)`. Esses valores são apenas uma configuração do exemplo e podem ser alterados conforme a necessidade do teste, exemplo: `year = random.randint(1980, 2020)`.
-
-### Intervalo de dias
-
-A utilização de: `day = random.randint(1, 28)` garante uma data válida para qualquer mês, mas restringe a geração aos primeiros 28 dias.
+* **Intervalo de dias:** a utilização de: `day = random.randint(1, 28)` garante uma data válida para qualquer mês, mas restringe a geração aos primeiros 28 dias.
 
 Se o objetivo do teste for exercitar situações envolvendo:
 
@@ -240,24 +187,6 @@ Se o objetivo do teste for exercitar situações envolvendo:
 * anos bissextos;
 
 será necessário utilizar uma estratégia diferente para determinar o último dia de cada mês.
-
----
-
-## 🛠️ Possíveis melhorias
-
-A implementação pode ser evoluída para:
-
-* Gerar qualquer dia válido do mês;
-* Considerar anos bissextos;
-* Gerar datas entre duas datas específicas;
-* Gerar datas futuras;
-* Gerar datas passadas;
-* Gerar datas de nascimento considerando uma faixa etária;
-* Gerar datas úteis;
-* Gerar datas com diferentes formatos;
-* Criar uma biblioteca reutilizável de dados de teste.
-
-Por exemplo, uma evolução interessante seria substituir o limite fixo de `28` por uma lógica que identifique automaticamente a quantidade de dias existente em cada mês.
 
 ---
 
