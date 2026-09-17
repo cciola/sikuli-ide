@@ -122,8 +122,3 @@ Arquivo gerado: 3
 ```
 
 Se o teste falhar depois disso, é possível verificar que o último screenshot capturado foi o número `3`.
-Sugestões, melhorias e novos exemplos são bem-vindos! Caso você tenha alguma dúvida, sugestão ou queira contribuir com o projeto, fique à vontade para entrar em contato.
-
-## 📌 Observação
-
-Este repositório foi criado inicialmente como material de estudo e referência pessoal durante o aprendizado do SikuliX com Python. Os exemplos aqui apresentados representam funcionalidades que foram exploradas e utilizadas em automações, podendo ser adaptados conforme a necessidade de cada projeto.
