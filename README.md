@@ -8,15 +8,15 @@ O **Sikuli** é uma ferramenta de automação e testes de interfaces gráficas (
 
 O Sikuli IDE utiliza a linguagem **Jython**, uma implementação do Python executada sobre a plataforma Java. A automação é baseada principalmente na identificação visual dos elementos. Por exemplo, em vez de localizar um botão utilizando um seletor, a automação pode utilizar uma imagem do botão para encontrá-lo na tela. Isso permite trabalhar com aplicações que possuem diferentes tipos de interface, desde que os elementos possam ser identificados visualmente.
 
-## 🧪 Aplicações
+## ✔ Aplicações
 
 Uma das principais características é a possibilidade de automatizar aplicações independentemente da tecnologia utilizada na interface. Ele pode ser utilizado em cenários envolvendo: aplicações web, desktop, mobile (utilizando o espelhamento da tela do dispositivo no computador),  testes funcionais, automação de tarefas repetitivas, validação de elementos visuais, dentre outros. O propósito é possibilitar a automação de aplicações que apresentem uma interface gráfica com o usuário.
 
-## 📂 Exemplos disponíveis
+## 🧪 Exemplos disponíveis
 
-* **Captura de screenshots** - **[captura_screenshot](captura_screenshot.md)**
-* **Geração de CPF aleatório** - **[gera_cpf_aleatorio](gera_cpf_aleatorio.md)**
-* **Geração de data aleatória** - **[gera_data_aleatoria](gera_data_aleatoria.md)**
+* Captura de screenshots - **[captura_screenshot](captura_screenshot.md)**
+* Geração de CPF aleatório - **[gera_cpf_aleatorio](gera_cpf_aleatorio.md)**
+* Geração de data aleatória - **[gera_data_aleatoria](gera_data_aleatoria.md)**
 
 ## 🎯 Objetivo do repositório
 
