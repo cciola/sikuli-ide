@@ -14,9 +14,9 @@ Uma das principais características é a possibilidade de automatizar aplicaçõ
 
 ## 🧪 Exemplos disponíveis
 
-* Captura de screenshots - **[captura_screenshot](captura_screenshot.md)**
-* Geração de CPF aleatório - **[gera_cpf_aleatorio](gera_cpf_aleatorio.md)**
-* Geração de data aleatória - **[gera_data_aleatoria](gera_data_aleatoria.md)**
+* **[Captura de screenshots](captura_screenshot.md)**
+* **[Geração de CPF aleatório](gera_cpf_aleatorio.md)**
+* **[Geração de data aleatória](gera_data_aleatoria.md)**
 
 ## 🎯 Observações
 
