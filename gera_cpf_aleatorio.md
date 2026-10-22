@@ -86,4 +86,5 @@ print('CPF gerado: %s' % numCPF)
 
 Nesse cenário, o log do Sikuli ainda poderá indicar qual CPF foi utilizado: `CPF gerado: 12345678909`. Assim, é possível identificar o dado utilizado naquela execução específica do teste.
 
-> 💡 **Observação: CPF válido não significa CPF real**. A função gera um número que atende à regra matemática de validação dos dígitos do CPF; o gerador deve ser entendido como uma ferramenta para dados de teste, apenas.
+> [!WARNING]
+> **CPF válido não significa CPF real**. A função gera um número que atende à regra matemática de validação dos dígitos do CPF; o gerador deve ser entendido como uma ferramenta para dados de teste, apenas.
